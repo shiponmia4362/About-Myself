@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>উপহার খেদমত সেন্টার</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background: linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.50)), url("1.jpg");
+background-size:cover;
+}
+
+/* Glass Card */
+.card{
+width:100%;
+padding:20px;
+border-radius:25px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.25);
+box-shadow:0 10px 40px rgba(0,0,0,0.6);
+color:white;
+}
+
+/* Header */
+.header{
+text-align:center;
+font-size:24px;
+font-weight:bold;
+margin-bottom:0px;
+text-shadow:0px 0px 0 #ddd,1px 1px 0 #999,2px 2px 1px black;
+}
+
+/* Profile */
+.profile{text-align:center;}
+.profile img{
+width:100px;
+height:100px;
+border-radius:50%;
+border:4px solid white;
+box-shadow:0 0 15px black;
+}
+
+/* Name */
+.name{
+font-size:22px;
+margin-top:2px;
+font-weight:bold;
+text-shadow:0px 0px 0 #eee,2px 2px 2px black;
+}
+
+.follow{
+margin-top:2px;
+font-size:14px;
+}
+
+/* Info */
+.info{
+margin-top:15px;
+line-height:1.7;
+font-size:14px;
+}
+
+/* Buttons */
+.buttons{
+display:flex;
+justify-content:space-between;
+margin-top:15px;
+}
+.buttons button{
+flex:1;
+margin:3px;
+padding:8px;
+border-radius:10px;
+border:none;
+background:rgba(255,255,255,0.2);
+color:white;
+cursor:pointer;
+backdrop-filter:blur(5px);
+}
+.buttons button:hover{
+background:rgba(255,255,255,0.4);
+}
+
+/* Content */
+.content{
+margin-top:12px;
+padding:10px;
+border-radius:10px;
+background:rgba(255,255,255,0.15);
+min-height:60px;
+}
+
+/* Story Icons */
+.story{
+margin-top:15px;
+display:flex;
+overflow-x:auto;
+}
+.story img{
+width:40px;
+height:40px;
+border-radius:50%;
+margin-right:8px;
+border:2px solid white;
+}
+
+/* Download Button */
+.download-btn{
+position:fixed;
+bottom:5px;
+left:15px;
+padding:3px 5px;
+background:linear-gradient(45deg,#FFD700,#FFA500);
+border:none;
+border-radius:12px;
+color:black;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 0 15px rgba(255,215,0,0.8);
+transition:0.3s;
+z-index:999;
+}
+.download-btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 25px rgba(255,215,0,1);
+}
+
+/* Loader & Success */
+.loader{display:none;width:28px;height:28px;border:4px solid white;border-top:4px solid orange;border-radius:50%;animation:spin 1s linear infinite;margin-top:6px;}
+@keyframes spin{100%{transform:rotate(360deg);}}
+.success{display:none;color:#00ff9c;font-size:22px;margin-top:6px;}
+
+/* ===== Modern Popup CSS ===== */
+.mp-overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.65);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:99999;
+padding:15px;
+}
+.mp-box{
+width:100%;
+max-width:650px;
+background:white;
+border-radius:20px;
+padding:25px;
+position:relative;
+animation:popupZoom .35s ease;
+box-shadow:0 25px 60px rgba(0,0,0,0.4);
+}
+@keyframes popupZoom{
+from{transform:scale(.7);opacity:0}
+to{transform:scale(1);opacity:1}
+}
+.mp-close{
+position:absolute;
+top:12px;
+right:18px;
+font-size:22px;
+cursor:pointer;
+font-weight:bold;
+color:#888;
+}
+.mp-close:hover{color:red;}
+#mp-title{text-align:center;margin-bottom:20px;font-size:26px;}
+.mp-table{width:100%;border-collapse:collapse;}
+.mp-table th{background:#111;color:white;padding:10px;}
+.mp-table td{padding:10px;border-bottom:1px solid #eee;text-align:center;}
+@media(max-width:600px){
+.mp-box{padding:18px;}
+#mp-title{font-size:22px;}
+.mp-table th,.mp-table td{font-size:13px;padding:8px;}
+}
+
+/* ===== WhatsApp Floating Button ===== */
+.whatsapp-btn {
+  position:fixed;
+  bottom:5px;
+  right:20px;
+  width:30px;
+  height:30px;
+  background:#25D366;
+  border-radius:50%;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+  cursor:pointer;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:0.3s;
+}
+.whatsapp-btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+.whatsapp-btn img{
+  width:35px;
+  height:35px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="header"></div>
+
+<div class="profile">
+<img src="4.jpg">
+<div class="name">Md Shipon Mia</div>
+
+<div class="follow">
+<fieldset style="background-color:gray">
+<legend style="background-color:red"><b>Diploma Engineering in Computer Science</b></legend>
+<marquee><font size="2px">
+Right Now, I am Working as a English Teacher & Computer Operator in <b>Mochna Darul Uloom Madrasha,</b> <font size="0.6px"> Mochna, Muksudpur, Gopalganj</font>
+</font></marquee>
+</fieldset>
+</div>
+</div>
+
+<div class="info">
+<b>Contact: </b><br>
+☎️ Mobile: 01960670704 <sub><font size="0.9px">(imo,whatsapp)</font></sub><br>
+✉️ shiponmia436249@gmail.com <br>
+🏬 Address: Megshimul, Purbadhala, Netrokona
+</div>
+
+<div class="buttons">
+<button onclick="showPopup('board')"><b>Both</b> Education</button>
+<button onclick="showPopup('story')"><b>Work </b>Experience</button>
+<button onclick="showPopup('photo')"><b>Typing</b> Speed </button>
+<button onclick="showPopup('reel')"><b>Language</b> Skill</button>
+</div>
+
+<div class="content" id="content">
+  <font size="2px">
+    I am a dedicated and hardworking educator 
+    familiar with the Qawmi madrasa education 
+    system and well-versed in both Islamic 
+    studies and modern technology.
+  </font>
+</div>
+
+<br><font style="color:orange">
+My Clients:
+<hr>
+<div class="story">
+<img src="1.jpg">
+<img src="2.jpg">
+<img src="3.jpg">
+<img src="4.jpg">
+<img src="1.jpg">
+<img src="5.jpg">
+</div>
+</div>
+
+<!-- ===== Modern Popup HTML ===== -->
+<div id="modernPopup" class="mp-overlay">
+  <div class="mp-box">
+    <span class="mp-close" onclick="closePopup()">✕</span>
+    <h2 id="mp-title"></h2>
+    <div class="mp-content" id="mp-content"></div>
+  </div>
+</div>
+
+<!-- ===== WhatsApp Floating Button ===== -->
+<a class="whatsapp-btn" href="https://wa.me/8801960670704" target="_blank" title="WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+				
+
+
+
+
+<script>
+// Typing Animation
+(function(){
+const box = document.querySelector("#content font");
+const text = box.innerText.trim();
+const words = text.split(" ");
+box.innerHTML = "";
+let w = 0;
+function startLoop(){
+box.innerHTML = "";
+w = 0;
+function showWord(){
+if(w >= words.length){
+setTimeout(startLoop,1500);
+return;
+}
+let wordSpan = document.createElement("span");
+wordSpan.style.display="inline-block";
+wordSpan.style.marginRight="6px";
+wordSpan.style.color="#FFD700";
+wordSpan.style.textShadow="0 0 30px #FFD700,0 0 50px #FFA500";
+wordSpan.style.transform="scale(0.6)";
+wordSpan.style.opacity="0";
+wordSpan.style.transition="0.4s";
+box.appendChild(wordSpan);
+setTimeout(()=>{
+wordSpan.style.transform="scale(1)";
+wordSpan.style.opacity="1";
+},50);
+let letters = words[w].split("");
+let l = 0;
+function typeLetter(){
+if(l >= letters.length){
+w++;
+setTimeout(showWord,200);
+return;
+}
+let letterSpan = document.createElement("span");
+letterSpan.innerText = letters[l];
+letterSpan.style.opacity="0";
+letterSpan.style.transition="0.2s";
+letterSpan.style.display="inline-block";
+wordSpan.appendChild(letterSpan);
+setTimeout(()=>{
+letterSpan.style.opacity="1";
+},20);
+l++;
+setTimeout(typeLetter,70);
+}
+setTimeout(typeLetter,300);
+}
+showWord();
+}
+startLoop();
+})();
+
+// Modern Popup JS
+function showPopup(type){
+  let title="";
+  let table="";
+  if(type=="board"){
+    title="Education";
+    table=`
+      <table class="mp-table">
+        <tr><th>Exam</th><th>Board</th><th>Result</th></tr>
+        <tr><td>Diploma Engineering in<br> Computer Science</td><td>Dhaka</td><td>4.00</td></tr>
+        <tr><td>HSC</td><td>Dhaka</td><td>5.00</td></tr>
+        <tr><td>SSC</td><td>Dhaka</td><td>5.00</td></tr>
+        <tr><td>JSC</td><td>Dhaka</td><td>5.00</td></tr>
+        <tr><td>PSC</td><td>Dhaka</td><td>5.00</td></tr>
+        <tr><td>سرح الوقاية</td><td>وفاق المداريس العرابية</td><td>جيد جدا</td></tr>
+      </table>
+    `;
+  }
+  if(type=="story"){
+    title="Work Experience";
+    table=`
+      <table class="mp-table">
+        <tr><th>Company</th><th>Role</th><th>Years</th></tr>
+        <tr><td>Ekra Technical School & Collage</td><td>Computer Operator</td><td>6 Months</td></tr>
+        <tr><td>Markajul Ilmi Model Madrasha</td><td>IT Manager</td><td>2 Years</td></tr>
+        <tr><td>Mochna Darul Uloom Madrasha</td><td>Teacher & Operator</td><td>Running</td></tr>
+      </table>
+    `;
+  }
+  if(type=="photo"){
+    title="Typing Speed";
+    table=`
+      <table class="mp-table">
+        <tr><th>Language</th><th>Speed</th></tr>
+        <tr><td>English</td><td>50 WPM</td></tr>
+        <tr><td>Bangla</td><td>40 WPM</td></tr>
+        <tr><td>Arabic</td><td>30 WPM</td></tr>
+        <tr><td>Urdu</td><td>20 WPM</td></tr>
+      </table>
+    `;
+  }
+  if(type=="reel"){
+    title="Language Skill";
+    table=`
+      <table class="mp-table">
+        <tr><th>Language</th><th>Level</th></tr>
+        <tr><td>Bangla</td><td>Fluent</td></tr>
+        <tr><td>English</td><td>Intermediate</td></tr>
+        <tr><td>Urdu</td><td>Intermediate</td></tr>
+        <tr><td>Arabic</td><td>Basic</td></tr>
+        <tr><td>Persian</td><td>Basic</td></tr>
+      </table>
+    `;
+  }
+  document.getElementById("mp-title").innerHTML = title;
+  document.getElementById("mp-content").innerHTML = table;
+  document.getElementById("modernPopup").style.display = "flex";
+}
+
+function closePopup(){
+  document.getElementById("modernPopup").style.display = "none";
+}
+
+// Download Button
+function downloadFile(){
+window.open(
+"https://drive.google.com/uc?export=download&id=1_hX0UfgcggEwijx_IMb--tbavGgfDmHz",
+"_blank"
+);
+}
+</script>
+
+<button class="download-btn" onclick="downloadFile()">⬇ Download CV</button>
+
+</body>
+</html>>>>utton>
+
+</body>
+</html>on
+function downloadFile(){
+window.open(
+"https://drive.google.com/uc?export=download&id=1_hX0UfgcggEwijx_IMb--tbavGgfDmHz",
+"_blank"
+);
+}
+</script>
+
+<button class="download-btn" onclick="downloadFile()">⬇ Download CV</button>
+
+</body>
+</html>
