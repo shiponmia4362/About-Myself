@@ -240,6 +240,69 @@ Right Now, I am Working as a English Teacher & Computer Operator in <b>Mochna Da
 🏬 Address: Megshimul, Purbadhala, Netrokona
 </div>
 
+<button <button onclick="showPopup('address')" 
+style="
+position:relative;
+overflow:hidden;
+padding:2px 2px;
+font-size:10px;
+font-weight:bold;
+color:red;
+background:black;
+border:none;
+border-radius:35px;
+cursor:pointer;
+letter-spacing:1px;
+box-shadow:0 6px 18px rgba(0,0,0,0.40);
+">
+
+<span style="position:relative;z-index:2;">Full Address</span>
+
+<span style="
+position:absolute;
+left:0;
+bottom:-40px;
+width:200%;
+height:120px;
+background:linear-gradient(90deg,#FFD700,#ffec8b,#FFD700);
+border-radius:50%;
+animation:waveMove 2s linear infinite;
+"></span>
+
+<span style="
+position:absolute;
+left:-50%;
+bottom:-50px;
+width:200%;
+height:140px;
+background:linear-gradient(90deg,green,yellow,blue);
+opacity:.50;
+border-radius:40%;
+animation:waveMove2 4s linear infinite;
+"></span>
+
+<style>
+@keyframes waveMove{
+0%{transform:translateX(0) translateY(0) rotate(0deg);}
+50%{transform:translateX(-25%) translateY(-25px) rotate(3deg);}
+100%{transform:translateX(-50%) translateY(0) rotate(0deg);}
+}
+
+@keyframes waveMove2{
+0%{transform:translateX(0) translateY(0) rotate(0deg);}
+50%{transform:translateX(25%) translateY(-20px) rotate(-3deg);}
+100%{transform:translateX(50%) translateY(0) rotate(0deg);}
+}
+</style>
+
+</button>
+
+
+
+
+
+
+
 <div class="buttons">
 <button onclick="showPopup('board')"><b>Both</b> Education</button>
 <button onclick="showPopup('story')"><b>Work </b>Experience</button>
@@ -255,20 +318,297 @@ Right Now, I am Working as a English Teacher & Computer Operator in <b>Mochna Da
     studies and modern technology.
   </font>
 </div>
-
 <br><font style="color:orange">
-My Clients:
+My Projects & Skills:
 <hr>
+
 <div class="story">
-<img src="1.jpg">
-<img src="2.jpg">
-<img src="3.jpg">
-<img src="4.jpg">
-<img src="1.jpg">
-<img src="5.jpg">
+
+<a href="https://stock.adobe.com/contributor/211816553/MD%20SHIPON" target="_blank">
+<button style="
+width:100%;
+margin:4px 0;
+padding:2px;
+border:none;
+border-radius:12px;
+background:linear-gradient(45deg,#FFD700,#ffb300);
+color:#111;
+font-weight:bold;
+font-size:11px;
+cursor:pointer;
+box-shadow:0 4px 12px rgba(0,0,0,.3);
+transition:.3s;
+"
+onmouseover="this.style.transform='translateX(8px)';this.style.boxShadow='0 8px 20px rgba(0,0,0,.5)'"
+onmouseout="this.style.transform='translateX(0)';this.style.boxShadow='0 4px 12px rgba(0,0,0,.3)'"
+>
+🌐 Graphics
+</button>
+</a>
+
+<a href="https://baharestore.com" target="_blank">
+<button style="
+width:100%;
+margin:4px 0;
+padding:2px;
+border:none;
+border-radius:12px;
+background:linear-gradient(45deg,#FFD700,#ffb300);
+color:#111;
+font-weight:bold;
+font-size:11px;
+cursor:pointer;
+box-shadow:0 4px 12px rgba(0,0,0,.3);
+transition:.3s;
+"
+onmouseover="this.style.transform='translateX(8px)'"
+onmouseout="this.style.transform='translateX(0)'"
+>
+🚀 Web Design
+</button>
+</a>
+<a href="javascript:void(0)">
+<button style="
+width:100%;
+margin:4px 0;
+padding:2px;
+border:none;
+border-radius:12px;
+background:linear-gradient(45deg,#FFD700,#ffb300);
+color:#111;
+font-weight:bold;
+font-size:11px;
+cursor:pointer;
+box-shadow:0 4px 12px rgba(0,0,0,.3);
+transition:.3s;
+"
+onclick="document.getElementById('videoBox').style.display='flex'"
+onmouseover="this.style.transform='translateX(8px)'"
+onmouseout="this.style.transform='translateX(0)'"
+>
+💎 Video Editing
+</button>
+</a>
+
+
+<!-- VIDEO POPUP -->
+<div id="videoBox" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.8);
+justify-content:center;
+align-items:center;
+z-index:9999;
+">
+
+<div style="position:relative;width:90%;max-width:400px;">
+
+<div onclick="document.getElementById('videoBox').style.display='none'" 
+style="
+position:absolute;
+top:-30px;
+right:0;
+color:#fff;
+font-size:22px;
+cursor:pointer;
+">✖</div>
+
+<video controls autoplay style="
+width:100%;
+border-radius:12px;
+box-shadow:0 20px 50px rgba(0,0,0,.8);
+">
+<source src="1.mp4" type="video/mp4">
+</video>
+
 </div>
 </div>
 
+
+
+
+
+<a href="javascript:void(0)">
+<button style="
+width:100%;
+margin:4px 0;
+padding:2px;
+border:none;
+border-radius:50px;
+background:linear-gradient(45deg,#FFD700,#ffb300);
+color:#111;
+font-weight:bold;
+font-size:11px;
+cursor:pointer;
+box-shadow:0 4px 12px rgba(0,0,0,.3);
+transition:.3s;
+"
+onclick="document.getElementById('skillLayout').style.display='flex'"
+onmouseover="this.style.transform='translateX(8px)'"
+onmouseout="this.style.transform='translateX(0)'"
+>
+💎 My All Skills
+</button>
+</a>
+
+
+<!-- Skill Layout -->
+<div id="skillLayout" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.7);
+justify-content:center;
+align-items:center;
+z-index:9999;
+">
+
+<div style="
+width:90%;
+max-width:320px;
+background:#111;
+padding:20px;
+border-radius:18px;
+box-shadow:0 20px 60px rgba(0,0,0,.8);
+color:#fff;
+position:relative;
+">
+
+<div onclick="document.getElementById('skillLayout').style.display='none'" 
+style="
+position:absolute;
+top:10px;
+right:15px;
+font-size:20px;
+cursor:pointer;
+">✖</div>
+
+<h3 style="
+text-align:center;
+margin-bottom:15px;
+color:#FFD700;
+letter-spacing:1px;
+">My Skills</h3>
+
+
+
+<div style="
+padding:2px;
+margin:6px 0;
+border-radius:50px;
+background:linear-gradient(90deg,#FFD700,#ffb300);
+color:#111;
+font-weight:bold;
+text-align:center;
+">Ai Engineering</div>
+
+
+
+<div style="
+padding:2px;
+margin:6px 0;
+border-radius:50px;
+background:linear-gradient(90deg,#FFD700,#ffb300);
+color:#111;
+font-weight:bold;
+text-align:center;
+">Web Development</div>
+
+<div style="
+padding:2px;
+margin:6px 0;
+border-radius:50px;
+background:linear-gradient(90deg,#FFD700,#ffb300);
+color:#111;
+font-weight:bold;
+text-align:center;
+">Web App Development</div>
+
+<div style="
+padding:2px;
+margin:6px 0;
+border-radius:50px;
+background:linear-gradient(90deg,#FFD700,#ffb300);
+color:#111;
+font-weight:bold;
+text-align:center;
+">Graphics Design</div>
+
+<div style="
+padding:2px;
+margin:6px 0;
+border-radius:50px;
+background:linear-gradient(90deg,#FFD700,#ffb300);
+color:#111;
+font-weight:bold;
+text-align:center;
+">Video Editing</div>
+
+
+
+<div style="
+padding:2px;
+margin:6px 0;
+border-radius:50px;
+background:linear-gradient(90deg,#FFD700,#ffb300);
+color:#111;
+font-weight:bold;
+text-align:center;
+">Voice Editing</div>
+
+
+
+<div style="
+padding:2px;
+margin:6px 0;
+border-radius:50px;
+background:linear-gradient(90deg,#FFD700,#ffb300);
+color:#111;
+font-weight:bold;
+text-align:center;
+">Digital Marketing</div>
+
+
+
+<div style="
+padding:2px;
+margin:6px 0;
+border-radius:50px;
+background:linear-gradient(90deg,#FFD700,#ffb300);
+color:#111;
+font-weight:bold;
+text-align:center;
+">Social Media Marketing</div>
+
+
+
+
+
+
+<div style="
+padding:2px;
+margin:6px 0;
+border-radius:50px;
+background:linear-gradient(90deg,#FFD700,#ffb300);
+color:#111;
+font-weight:bold;
+text-align:center;
+">Accounting Software management</div>
+
+
+
+</div>
+</div>
+
+</div>
+</div>
 <!-- ===== Modern Popup HTML ===== -->
 <div id="modernPopup" class="mp-overlay">
   <div class="mp-box">
@@ -348,6 +688,86 @@ startLoop();
 function showPopup(type){
   let title="";
   let table="";
+  if(type=="address"){
+  title="Address";
+  table=`
+  <table class="mp-table">
+  
+  <tr>
+  <td style="text-align:left;">Name</td>
+  <td style="text-align:center;">:</td>
+  <td style="text-align:left;">Md Shipon Mia</td>
+  </tr>
+  
+  <tr>
+  <td style="text-align:left;">Father's Name</td>
+  <td style="text-align:center;">:</td>
+  <td style="text-align:left;">Md Najrul Islam</td>
+  </tr>
+  
+  <tr>
+  <td style="text-align:left;">Mother's Name</td>
+  <td style="text-align:center;">:</td>
+  <td style="text-align:left;">Mst. Sulama Akter</td>
+  </tr>
+  
+  <tr>
+  <td style="text-align:left;">Date of Birth</td>
+  <td style="text-align:center;">:</td>
+  <td style="text-align:left;">22/08/2001</td>
+  </tr>
+  
+  <tr>
+  <td style="text-align:left;">Village</td>
+  <td style="text-align:center;">:</td>
+  <td style="text-align:left;">Megshimul</td>
+  </tr>
+  
+  <tr>
+  <td style="text-align:left;">Post Office</td>
+  <td style="text-align:center;">:</td>
+  <td style="text-align:left;">Megshimul</td>
+  </tr>
+  
+  <tr>
+  <td style="text-align:left;">Union</td>
+  <td style="text-align:center;">:</td>
+  <td style="text-align:left;">Ghagra</td>
+  </tr>
+  
+  <tr>
+  <td style="text-align:left;">Upazilla</td>
+  <td style="text-align:center;">:</td>
+  <td style="text-align:left;">Purbadhala</td>
+  </tr>
+  
+  <tr>
+  <td style="text-align:left;">District</td>
+  <td style="text-align:center;">:</td>
+  <td style="text-align:left;">Netrokona</td>
+  </tr>
+  
+  <tr>
+  <td style="text-align:left;">Division</td>
+  <td style="text-align:center;">:</td>
+  <td style="text-align:left;">Mymensingh</td>
+  </tr>
+  
+  <tr>
+  <td style="text-align:left;">Status</td>
+  <td style="text-align:center;">:</td>
+  <td style="text-align:left;">Married</td>
+  </tr>
+  
+  <tr>
+  <td style="text-align:left;">Religion</td>
+  <td style="text-align:center;">:</td>
+  <td style="text-align:left;">Islam</td>
+  </tr>
+  
+  </table>
+  `;
+  }
   if(type=="board"){
     title="Education";
     table=`
@@ -418,33 +838,6 @@ window.open(
 
 <button class="download-btn" onclick="downloadFile()">⬇ Download CV</button>
 
-<script>
-
-(function(){
-
-function forceMobileView(){
-
-let scale = window.innerWidth / 400;
-
-if(scale > 1){
-scale = 1;
-}
-
-document.body.style.transform = "scale(" + scale + ")";
-document.body.style.transformOrigin = "top left";
-document.body.style.width = (100/scale) + "%";
-
-}
-
-forceMobileView();
-
-window.addEventListener("resize", forceMobileView);
-
-})();
-
-</script>
-	
-
-	
 </body>
 </html>
+
